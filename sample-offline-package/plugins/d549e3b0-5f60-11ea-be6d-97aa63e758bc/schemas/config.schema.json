@@ -1,0 +1,181 @@
+{
+    "title": {
+        "type": "text",
+        "default": "Input Table"
+    },
+    "stateVersion": {
+        "type": "text",
+        "hidden": true,
+        "label": "State Version",
+        "description": "Used by the sim code internally to track which state changes were caused by itself",
+        "learnerEditable": true,
+        "default": "0"
+    },
+    "settings": {
+        "type": "group",
+        "label": "Settings",
+        "description": "Settings of the component",
+        "properties": {
+            "config": {
+                "type": "json",
+                "label": "Configuration",
+                "description": "The configuration data for the widget",
+                "hidden": true,
+                "readOnly": true
+            },
+            "showHints": {
+                "type": "boolean",
+                "label": "Show hints",
+                "description": "Show students if answers are correct or incorrect for all inputs",
+                "default": false,
+                "learnerEditable": true
+            },
+            "showCorrect": {
+                "type": "boolean",
+                "label": "Show correct",
+                "description": "Show student the correct answer for all inputs",
+                "default": false,
+                "learnerEditable": true
+            },
+            "isCaseSensitive": {
+                "type": "boolean",
+                "label": "Case sensitive",
+                "description": "Score answers as correct only if answers match word capitalisation",
+                "default": true
+            },
+            "alternateCorrectDelimiter": {
+                "type": "text",
+                "label": "Alt Correct Delimitr",
+                "description": "Character used to separate an input's Alternate Correct answers",
+                "default": ","
+            },
+            "languageFormatting": {
+                "type": "enum",
+                "label": "Language Formatting",
+                "items": [
+                    "English",
+                    "Arabic"
+                ],
+                "default": "English"
+            },
+            "direction": {
+                "type": "enum",
+                "label": "Direction",
+                "description": "Language direction of the widget",
+                "items": [
+                    "LTR",
+                    "RTL",
+                    "Auto"
+                ],
+                "default": "Auto"
+            },
+            "css": {
+                "type": "text",
+                "label": "Custom CSS",
+                "description": "Custom CSS to be added to style the widget. Supports URLs but will not preload.",
+                "default": ""
+            },
+            "cssUrl": {
+                "type": "text",
+                "label": "Custom CSS URL",
+                "default": ""
+            }
+        }
+    },
+    "accessibility": {
+        "type": "group",
+        "label": "Accessibility",
+        "description": "Settings for screen readers",
+        "properties": {
+            "language": {
+                "type": "enum",
+                "label": "Language",
+                "description": "The language used by screen readers",
+                "items": [
+                    "Arabic",
+                    "English",
+                    "French",
+                    "Italian",
+                    "Japanese",
+                    "Portuguese",
+                    "Russian",
+                    "Spanish"
+                ],
+                "default": "English"
+            },
+            "title": {
+                "type": "text",
+                "label": "Table title",
+                "description": "Title of the table, used for screen readers",
+                "default": ""
+            },
+            "summary": {
+                "type": "text",
+                "label": "Table summary",
+                "description": "Summary of the table contents, used for screen readers",
+                "default": ""
+            }
+        }
+    },
+    "correct": {
+        "type": "boolean",
+        "label": "Correct",
+        "description": "All student's answers are correct",
+        "readOnly": true,
+        "default": false,
+        "learnerEditable": true
+    },
+    "numberOfCorrect": {
+        "type": "number",
+        "label": "Number of correct",
+        "description": "The number of inputs the student has correct",
+        "readOnly": true,
+        "default": 0,
+        "learnerEditable": true
+    },
+    "data": {
+        "type": "json",
+        "label": "Table data",
+        "description": "Data for the table",
+        "learnerEditable": true
+    },
+    "inputs": {
+        "label": "Inputs",
+        "type": "list",
+        "learnerEditable": true,
+        "listType": {
+            "type": "group",
+            "readOnly": true,
+            "flat": true,
+            "properties": {
+                "label" : {
+                    "type": "text",
+                    "label": "Cell",
+                    "readOnly": true
+                },
+                "rowIndex" : {
+                    "type": "number",
+                    "readOnly": true,
+                    "hidden": true
+                },
+                "colIndex" : {
+                    "type": "number",
+                    "readOnly": true,
+                    "hidden": true
+                },
+                "correct" : {
+                    "type": "boolean",
+                    "label": "Correct",
+                    "readOnly": true,
+                    "learnerEditable": true
+                },
+                "altCorrect" : {
+                    "type": "text",
+                    "label": "Alternate Correct",
+                    "description": "Answers that will also be marked as correct separated by delimiter"
+                }
+            }
+        },
+        "default": []
+    }
+}

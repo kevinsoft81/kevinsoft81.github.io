@@ -1,0 +1,194 @@
+{
+  "title": {
+    "type": "text",
+    "label": "Plugin ID",
+    "default": "Flashcards"
+  },
+  "description": {
+    "type": "rich-text",
+    "default": "A plugin that allows learner to review a series of terms and their respective definitions, in a dual-sided card format",
+    "hidden": true
+  },
+  "activityLabel": {
+    "type": "rich-text",
+    "label": "Label No."
+  },
+  "activityTitle": {
+    "type": "rich-text",
+    "label": "Activity Title",
+    "default": ""
+  },
+  "instructions": {
+    "type": "rich-text",
+    "label": "Instructions",
+    "default": ""
+  },
+  "captions": {
+    "type": "rich-text",
+    "label": "Captions"
+  },
+  "credit": {
+    "type": "rich-text",
+    "label": "Credit"
+  },
+  "randomize": {
+    "type": "boolean",
+    "label": "Randomize",
+    "description": "Randomize the order of the cards",
+    "default": false
+  },
+  "objectFit": {
+    "type": "enum",
+    "displayType": "segmented",
+    "label": "Image Fit",
+    "description": "Randomize the order of the cards",
+    "items": [
+      "Fill",
+      "Contain",
+      "Cover"
+    ],
+    "default": "Cover"
+  },
+  "stepper": {
+    "type": "boolean",
+    "label": "Gallery View",
+    "description": "Show all of the cards or step one at a time",
+    "default": true
+  },
+  "navBar": {
+    "type": "enum",
+    "displayType": "segmented",
+    "label": "Stepper Nav",
+    "hidden": true,
+    "items": [
+      "Compact",
+      "Expanded"
+    ],
+    "default": "Compact"
+    },
+  "userModified": {
+    "label": "Attempted",
+    "type": "boolean",
+    "description": "If the user has interacted with the widget",
+    "readOnly": true,
+    "hidden": true,
+    "learnerEditable": true,
+    "default": false
+  },
+  "allModified": {
+    "label": "All Flipped",
+    "type": "boolean",
+    "description": "If the user has interacted with all the cards in the widget",
+    "readOnly": true,
+    "hidden": true,
+    "learnerEditable": true,
+    "default": false
+  },
+  "numberModified": {
+    "label": "Card Flipped",
+    "type": "number",
+    "description": "The number of cards the user has interacted with.",
+    "readOnly": true,
+    "hidden": true,
+    "learnerEditable": true,
+    "default": 0
+  },
+  "cards": {
+    "type": "list",
+    "label": "Cards",
+    "description": "The images in the component.",
+    "listType": {
+      "type": "group",
+      "properties": {
+        "front-text": {
+          "type": "rich-text",
+          "label": "Front Text",
+          "default": "Front text",
+          "description": "The text on the front (default side) of the card"
+        },
+        "front-background-color": {
+          "type": "color",
+          "label": "Background color",
+          "default": "rgba(0,0,0,0.2)",
+          "description": "The background color of the front of the card"
+        },
+        "front-image": {
+          "type": "image",
+          "label": "Front Image",
+          "description": "The image (optional) on the front (default side) of the card"
+        },
+        "front-image-altText": {
+          "type": "text",
+          "label": "Alt text",
+          "description": "The alt text of the front image"
+        },
+        "back-text": {
+          "type": "rich-text",
+          "label": "Back Text",
+          "default": "Back text",
+          "description": "The text on the back (default side) of the card"
+        },
+        "back-background-color": {
+          "type": "color",
+          "label": "Background color",
+          "default": "rgba(255,255,255,1)",
+          "description": "The background color of the back of the card"
+        },
+        "back-image": {
+          "type": "image",
+          "label": "Back Image",
+          "description": "The image (optional) on the back (default side) of the card"
+        },
+        "back-image-altText": {
+          "type": "text",
+          "label": "Alt text",
+          "description": "The alt text of the back image"
+        }
+      }
+    },
+    "default": [
+      {
+        "front-text": "Front of the card",
+        "front-background-color": "rgba(0,0,0,0.3)",
+        "front-image": "",
+        "front-image-altText": "",
+        "back-text": "Back of the card",
+        "back-background-color": "rgba(255,255,255,1)",
+        "back-image": "",
+        "back-image-altText": ""
+      },
+      {
+        "front-text": "Front of the card",
+        "front-background-color": "rgba(0,0,0,0.3)",
+        "front-image": "",
+        "front-image-altText": "",
+        "back-text": "Back of the card",
+        "back-background-color": "rgba(255,255,255,1)",
+        "back-image": "",
+        "back-image-altText": ""
+      }
+    ]
+  },
+  "style": {
+    "type": "group",
+    "label": "Style",
+    "flat": true,
+    "description": "",
+    "properties": {
+      "cssInline": {
+        "type": "text",
+        "label": "CSS Inline",
+        "description": "Custom inline css for the component.",
+        "default": ""
+      },
+      "cssUrl": {
+        "type": "text",
+        "label": "CSS url",
+        "description": "Custom css url for the component.",
+        "default": ""
+      }
+    }
+  }
+}
+
+ 

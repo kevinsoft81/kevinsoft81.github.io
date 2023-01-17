@@ -1,0 +1,463 @@
+{
+  "$schema": "/pluginGenericSchema/v2",
+  "title": {
+    "type": "text"
+  },
+  "description": {
+    "type": "rich-text"
+  },
+  "stage": {
+    "type": "group",
+    "properties": {},
+    "hidden": true
+  },
+  "components": {
+    "type": "list",
+    "listType": "courseware-item",
+    "hidden": true
+  },
+  "screenType": {
+    "type": "enum",
+    "label": "Screen type",
+    "items": [
+      "",
+      "Opening",
+      "Information",
+      "Simulation",
+      "Test",
+      "Quiz",
+      "Activity",
+      "Closing"
+    ],
+    "default": "",
+    "allowEmpty": true
+  },
+  "transitions": {
+    "label": "Screen transitions",
+    "description": "Optional transitions settings. Works only with lessons that support screen transitions: allows user to specify lesson transitions settings on a per-screen basis.",
+    "properties": {
+      "enter": {
+        "flat": true,
+        "properties": {
+          "animation": {
+            "allowEmpty": true,
+            "default": "",
+            "displayLabels": [
+              "None (default)",
+              "Fade",
+              "Slide down",
+              "Slide left",
+              "Slide right",
+              "Slide up",
+              "Custom keyframes"
+            ],
+            "items": [
+              "NONE",
+              "FADE",
+              "SLIDE_DOWN",
+              "SLIDE_LEFT",
+              "SLIDE_RIGHT",
+              "SLIDE_UP",
+              "CUSTOM"
+            ],
+            "placeholder": "Use lesson's animation type",
+            "type": "enum"
+          },
+          "duration": {
+            "default": 0,
+            "description": "Set to 0 to use lesson's duration",
+            "type": "number",
+            "units": "ms"
+          },
+          "easing": {
+            "allowEmpty": true,
+            "default": "",
+            "displayLabels": ["Ease in", "Ease out", "Linear"],
+            "displayType": "segmented",
+            "items": ["ease-in", "ease-out", "linear"],
+            "placeholder": "Select a timing function",
+            "type": "enum"
+          },
+          "customKeyframes": {
+            "default": "",
+            "description": "Custom keyframes must be provided in valid JSON format.",
+            "label": "Custom keyframes",
+            "type": "json"
+          }
+        },
+        "type": "group"
+      },
+      "exit": {
+        "flat": true,
+        "properties": {
+          "animation": {
+            "allowEmpty": true,
+            "default": "",
+            "displayLabels": [
+              "None (default)",
+              "Fade",
+              "Slide down",
+              "Slide left",
+              "Slide right",
+              "Slide up",
+              "Custom keyframes"
+            ],
+            "items": [
+              "NONE",
+              "FADE",
+              "SLIDE_DOWN",
+              "SLIDE_LEFT",
+              "SLIDE_RIGHT",
+              "SLIDE_UP",
+              "CUSTOM"
+            ],
+            "placeholder": "Use lesson's animation type",
+            "type": "enum"
+          },
+          "duration": {
+            "default": 0,
+            "description": "Set to 0 to use lesson's duration",
+            "type": "number",
+            "units": "ms"
+          },
+          "easing": {
+            "allowEmpty": true,
+            "default": "",
+            "displayLabels": ["Ease in", "Ease out", "Linear"],
+            "displayType": "segmented",
+            "items": ["ease-in", "ease-out", "linear"],
+            "placeholder": "Select a timing function",
+            "type": "enum"
+          },
+          "customKeyframes": {
+            "default": "",
+            "description": "Custom keyframes must be provided in valid JSON format.",
+            "label": "Custom keyframes",
+            "type": "json"
+          }
+        },
+        "type": "group"
+      }
+    },
+    "type": "group"
+  },
+  "lockElements": {
+    "type": "boolean",
+    "label": "Lock Elements",
+    "default": false,
+    "description": "DEPRECATED",
+    "hidden": true
+  },
+  "learnerCurrentAttempt": {
+    "type": "number",
+    "default": 1,
+    "readOnly": true,
+    "hidden": true,
+    "label": "Current Attempt",
+    "learnerEditable": true
+  },
+  "footer": {
+    "type": "group",
+    "flat": true,
+    "properties": {
+      "components" : {
+        "type": "list",
+        "listType": "courseware-item",
+        "description": "This stores the footer plugin",
+        "hidden": true
+      },
+      "buttonText": {
+        "type": "text",
+        "label": "Button text",
+        "default": "Next",
+        "learnerEditable": true
+      },
+      "buttonIcon": {
+        "type": "enum",
+        "label": "Button icon",
+        "items": ["Arrow", "None"],
+        "default": "Arrow"
+      },
+      "showFooter": {
+        "type": "boolean",
+        "label": "Show Footer",
+        "default": false
+      },
+      "showHistoryNavButtons": {
+        "type": "boolean",
+        "label": "Show History Nav",
+        "default": true
+      },
+      "previewFooter": {
+        "type": "boolean",
+        "label": "Show In Editor View",
+        "default": false
+      },
+      "position": {
+        "type": "enum",
+        "label": "Footer position",
+        "items": ["Fixed to screen bottom", "Below the stage"],
+        "default": "Fixed to screen bottom"
+      },
+      "footerComponent": {
+        "type": "group",
+        "label": "Footer plugin",
+        "flat": false,
+        "hidden": true,
+        "properties": {
+          "showFooterDropArea": {
+            "type": "enum",
+            "label": "Show Footer Plugin",
+            "displayType": "segmented",
+            "displayLabels": [
+              "Show",
+              "Hide"
+            ],
+            "items": [
+              "show",
+              "hide"
+            ],
+            "default": "hide"
+          },
+          "width": {
+            "type": "number",
+            "label": "Width",
+            "units": "px",
+            "default": 100
+          },
+          "footerComponentsAlignment": {
+            "type": "enum",
+            "label": "Plugin position",
+            "displayType": "segmented",
+            "displayLabels": [
+              "Left",
+              "Right"
+            ],
+            "items": [
+              "left",
+              "right"
+            ],
+            "description": "This sets the plugin alignment to left or right relative to the footer button.",
+            "default": "right"
+          },
+          "plugin": {
+            "type": "courseware-item",
+            "label": "Plugin",
+            "allowedCourseware": [
+              "component"
+            ],
+            "description": "A Plugin that is shown on the footer."
+          }
+        }
+      }
+    }
+  },
+  "styles": {
+    "type": "group",
+    "properties": {
+      "background": {
+        "type": "group",
+        "flat": true,
+        "properties": {
+          "color": {
+            "type": "color",
+            "label": "color"
+          },
+          "image": {
+            "type": "image",
+            "label": "image"
+          }
+        }
+      },
+      "stage": {
+        "type": "group",
+        "flat": true,
+        "properties": {
+          "maxWidth": {
+            "type": "number",
+            "label": "Width",
+            "default": 940,
+            "units": "px",
+            "minimum": 0,
+            "multipleOf": 1
+          },
+          "background": {
+            "type": "color",
+            "default": "rgba(255, 255, 255, 1)"
+          },
+          "responsive": {
+            "type": "boolean",
+            "default": true
+          },
+          "padding": {
+            "type": "group",
+            "flat": true,
+            "label": "stage padding",
+            "properties": {
+              "vertical": {
+                "type": "number",
+                "default": 60,
+                "units": "px",
+                "minimum": 0,
+                "multipleOf": 1
+              },
+              "horizontal": {
+                "type": "number",
+                "default": 60,
+                "units": "px",
+                "minimum": 0,
+                "multipleOf": 1
+              }
+            }
+          },
+          "border": {
+            "type": "group",
+            "flat": true,
+            "label": "stage border",
+            "properties": {
+              "color": {
+                "type": "color",
+                "default": "rgba(224, 224, 224, 1)"
+              },
+              "radius": {
+                "type": "number",
+                "default": 0,
+                "units": "px",
+                "minimum": 0,
+                "multipleOf": 1
+              },
+              "width": {
+                "type": "number",
+                "default": 0,
+                "units": "px",
+                "minimum": 0,
+                "multipleOf": 1
+              }
+            }
+          }
+        }
+      },
+      "elements": {
+        "type": "group",
+        "flat": true,
+        "properties": {
+          "padding": {
+            "type": "group",
+            "flat": true,
+            "properties": {
+              "vertical": {
+                "type": "number",
+                "default": 10,
+                "units": "px",
+                "minimum": 0,
+                "multipleOf": 1
+              },
+              "horizontal": {
+                "type": "number",
+                "default": 10,
+                "units": "px",
+                "minimum": 0,
+                "multipleOf": 1
+              }
+            }
+          }
+        }
+      },
+      "footer": {
+        "type": "group",
+        "flat": true,
+        "properties": {
+          "buttonColor": {
+            "type": "color",
+            "label": "Button color",
+            "default": "rgba(0, 115, 202, 1)"
+          },
+          "textColor": {
+            "type": "color",
+            "label": "Text color",
+            "default": "rgba(0, 0, 0, 0.7)",
+            "hidden": true
+          },
+          "backgroundColor": {
+            "type": "color",
+            "label": "BG color",
+            "default": "rgba(255, 255, 255, 1)"
+          },
+          "padding": {
+            "type": "number",
+            "label": "Padding",
+            "units": "px",
+            "default": 10
+          },
+          "corners": {
+            "type": "number",
+            "label": "Corners",
+            "units": "px",
+            "default": 4
+          },
+          "border": {
+            "type": "text",
+            "label": "Border",
+            "default": "none"
+          },
+          "shadow": {
+            "type": "text",
+            "label": "Border",
+            "default": "0 -1px 4px 0 rgba(0,0,0,0.06), 0 0 12px 2px rgba(0,0,0,0.1)"
+          }
+        }
+      },
+      "feedback": {
+        "type": "group",
+        "flat": true,
+        "properties": {
+          "width": {
+            "type": "number",
+            "label": "Width",
+            "units": "px",
+            "default": 320
+          },
+          "textColor": {
+            "type": "color",
+            "label": "Text color",
+            "default": "rgba(0, 0, 0, 0.7)"
+          },
+          "backgroundColor": {
+            "type": "color",
+            "label": "BG color",
+            "default": "rgba(255, 255, 255, 1)"
+          },
+          "corners": {
+            "type": "number",
+            "label": "Corners",
+            "units": "px",
+            "default": 4
+          },
+          "border": {
+            "type": "text",
+            "label": "Border",
+            "default": "none"
+          },
+          "shadow": {
+            "type": "text",
+            "label": "Border",
+            "default": "0 5px 47px 10px rgba(0,0,0,0.15), 0 10px 20px 2px rgba(0,0,0,0.1), 0 7px 8px 0 rgba(0,0,0,0.1)"
+          }
+        }
+      },
+      "css": {
+        "type": "text",
+        "label": "CSS"
+      },
+      "cssUrl": {
+        "type": "text",
+        "label": "CSS URL"
+      },
+      "cssClass": {
+        "type": "text",
+        "label": "CSS Class",
+        "description": "CSS class(es) added to the body of the screen"
+      }
+    }
+  }
+}

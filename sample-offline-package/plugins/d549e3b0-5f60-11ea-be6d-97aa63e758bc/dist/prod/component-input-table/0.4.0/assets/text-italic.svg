@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="14px" viewBox="0 0 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <polygon id="path-italic" points="10 5 10 8 12.21 8 8.79 16 6 16 6 19 14 19 14 16 11.79 16 15.21 8 18 8 18 5"></polygon>
+    </defs>
+    <g id="Table" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Simple-table" transform="translate(-488.000000, -196.000000)">
+            <g id="Italic" transform="translate(474.000000, 183.000000)">
+                <g transform="translate(8.000000, 8.000000)">
+                    <g>
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-italic"></use>
+                        </mask>
+                        <use id="Shape" fill="#767676" fill-rule="nonzero" xlink:href="#path-italic"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

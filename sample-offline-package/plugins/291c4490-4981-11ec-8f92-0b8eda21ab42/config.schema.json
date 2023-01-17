@@ -1,0 +1,39 @@
+{
+  "title": {
+    "type": "text",
+    "default": "Default Course Title"
+  },
+  "description": {
+    "type": "rich-text",
+    "default": "Default course description"
+  },
+  "author": {
+    "type": "text",
+    "label": "Author Name",
+    "default": "Author name"
+  },
+  "cover": {
+    "type": "image",
+    "label": "Cover Image"
+  },
+  "thumbnail": {
+    "type": "image",
+    "label": "Thumbnail Image"
+  },
+  "chapters": {
+    "type": "pathway",
+    "hidden": true,
+    "allowedCourseware": ["unit"],
+    "preload": "first"
+  },
+  "showTOC": {
+    "type": "boolean",
+    "label": "Show TOC",
+    "default": false
+  },
+  "enableAnnotations": {
+    "type": "boolean",
+    "label": "Enable Annotations",
+    "default": true
+  }
+}

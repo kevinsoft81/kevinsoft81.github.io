@@ -1,0 +1,59 @@
+{
+  "title": {
+    "type": "text",
+    "default": "Untitled frame",
+    "label": "Plugin ID"
+  },
+  "url": {
+    "type": "text",
+    "description": "The url for the iframe",
+    "label": "URL"
+  },
+  "activityLabel": {
+    "type": "rich-text",
+    "label": "Label No."
+  },
+  "activityTitle": {
+    "type": "rich-text",
+    "label": "Activity Title"
+  },
+  "instructions": {
+    "type": "rich-text",
+    "label": "Instructions"
+  },
+  "captions": {
+    "type": "rich-text",
+    "label": "Captions"
+  },
+  "credit": {
+    "type": "rich-text",
+    "label": "Credit"
+  },
+  "cssClass": {
+    "type": "text",
+    "label": "CSS Class",
+    "description": "CSS class(es) added to the body of the plugin",
+    "hidden": true
+  },
+  "style": {
+    "type": "group",
+    "flat": false,
+    "properties": {
+      "customClass": {
+        "type": "text",
+        "label": "Custom CSS class",
+        "default": ""
+      },
+      "customCss": {
+        "type": "text",
+        "label": "CSS",
+        "default": ""
+      },
+      "cssUrl": {
+        "type": "text",
+        "label": "CSS URL",
+        "default": ""
+      }
+    }
+  }
+}

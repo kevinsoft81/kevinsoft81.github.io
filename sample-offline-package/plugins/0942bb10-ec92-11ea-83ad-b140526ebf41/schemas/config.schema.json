@@ -1,0 +1,49 @@
+{
+  "language": {
+    "type": "enum",
+    "default": "cpp",
+    "label": "Select Language",
+    "items": [
+      "cpp",
+      "java",
+      "python",
+      "html",
+      "css",
+      "c",
+      "csharp",
+      "matlab",
+      "aspnet",
+      "javascript"
+    ],
+    "displayLabels": [
+      "C++",
+      "Java",
+      "Python",
+      "HTML",
+      "CSS",
+      "C",
+      "C#",
+      "MatLab",
+      "ASP.NET",
+      "JavaScript"
+    ]
+  },
+  "coloring": {
+    "type": "enum",
+    "default": "off",
+    "label": "Syntax Coloring",
+    "items": ["on", "off"]
+  },
+  "lineNumber": {
+    "type": "number",
+    "minimum": 1,
+    "default": 1,
+    "label": "Starting Line Number"
+  },
+  "showLineNumber": {
+    "type": "enum",
+    "default": "on",
+    "label": "Line Number",
+    "items": ["on", "off"]
+  }
+}

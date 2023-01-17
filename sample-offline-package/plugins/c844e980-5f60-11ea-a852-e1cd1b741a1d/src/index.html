@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <script src="cdp.min.js"></script>
+  <style>
+    html, body, #app {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    iframe {
+      display: block;
+      border: none;
+      flex:1;
+      margin-top: 15px;
+    }
+    
+    .iframe-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      font-family: var(--body-font);
+      color: var(--text-color);
+    }
+
+    .iframe-container > div {
+      padding: 11px 0 2px;
+    }
+
+    .component-title {
+      font-family: var(--title-font);
+    }
+
+    .component-label > p, .component-title {
+      display: inline-block;
+    }
+
+    .component-instruction > p {
+      margin: 0;
+    }
+
+    .component-figure {
+      margin-left: 0px;
+    }
+  </style>
+  <style id="style">
+  </style>
+  <style id="theme">
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    var __CDP;
+
+    function setValidPrefix(url) {
+      if (url.indexOf('//') === 0) { return url; }
+      if (url.indexOf('http://') === 0) { return url; }
+      if (url.indexOf('https://') === 0) { return url; }
+
+      return '//' + url;
+    }
+
+    function renderCssVariables(theme){
+      let newCDPThemeVars = `
+        ${toMaybeVarString(theme.bodyFont, "body-font")}
+        ${toMaybeVarString(theme.titleFont, "title-font")}
+        ${toMaybeVarString(theme.primaryColor, "primary-color")}
+        ${toMaybeVarString(theme.textColor, "text-color")}
+        ${toMaybeVarString(theme.successColor, "success-color")}
+        ${toMaybeVarString(theme.errorColor, "error-color")}
+        ${toMaybeVarString(theme.surfaceColor, "surface-color")}
+        ${toMaybeVarString(theme.backgroundColor, "background-color")}
+    `;
+      const renderEl = document.getElementById('app');
+      renderEl.style = newCDPThemeVars;
+
+      const styleEl = document.getElementById('theme');
+
+      styleEl.innerHTML = `
+      ${theme.cssUrl ? `@import url("${theme.cssUrl}");` : ""}
+        ${theme.css??''}
+      `;
+
+    }
+    function toMaybeVarString(maybeVal, cssVarName) {
+      return `${maybeVal ? `--${cssVarName}:${maybeVal};` : ""}`;
+    }
+    function renderFrame(state) {
+      const title = state.title || '';
+      let url = state.url || '';
+      const appEl = document.getElementById('app');
+      const styleEl = document.getElementById('style');
+      
+      styleEl.innerText = `
+      ${state.style?.cssUrl ? `@import url("${state.style.cssUrl}");` : ""} 
+        ${state.style?.customCss??''}
+      `;
+      
+      const cssClass = state?.style?.customCss || (state?.cssClass || '');
+      let iframe = '';
+      if(url && url.length > 1){
+        url = setValidPrefix(url);
+        iframe = `<iframe class="${cssClass}" src="${url}" title="${title}" allowfullscreen="true" allow="fullscreen"></iframe>`;
+      }
+
+      appEl.innerHTML = `
+        <div class="iframe-container ${cssClass}">
+          ${state.activityLabel || state.activityTitle
+          ? `<h4 class="component-label">${state.activityLabel ?? ''}
+              ${state.activityTitle ? `<span class="component-title">${state.activityTitle}</span>` : ''}
+            </h4>`
+          : ''}
+          ${state.instructions ? `<div class="component-instructions">${state.instructions}</div>` : ''}
+          ${iframe}
+          ${state.captions || state.credit
+          ? `<figure class="component-figure">
+              <figcaption>
+                ${state.captions ? `<div class="component-caption">${state.captions}</div>` : ''}
+                ${state.credit ? `<div class="component-credit">${state.credit}</div>` : ''}
+              </figcaption>
+            </figure>`
+          : ''}
+         </div>
+      `;
+
+      document.title = state.activityTitle || '';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      __CDP = CDP.default;
+      __CDP.register().then(function () {
+        __CDP.state().subscribe(renderFrame);
+        __CDP.theme().subscribe(renderCssVariables);
+      });
+    });
+  </script>
+</body>
+</html>

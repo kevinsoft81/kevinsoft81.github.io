@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="3" viewBox="0 0 16 3">
+  <g fill="none" fill-rule="evenodd" transform="translate(-7 -17)">
+    <rect width="30" height="36" fill="#FFF" opacity="0"/>
+    <g fill="#767676" transform="translate(7 17)">
+      <circle cx="1.5" cy="1.5" r="1.5"/>
+      <circle cx="8" cy="1.5" r="1.5"/>
+      <circle cx="14.5" cy="1.5" r="1.5"/>
+    </g>
+  </g>
+</svg>

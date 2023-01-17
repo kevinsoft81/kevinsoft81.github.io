@@ -1,0 +1,139 @@
+{
+    "$schema": "/pluginGenericSchema/v2",
+    "title": {
+        "label": "Plugin ID",
+        "type": "text",
+        "default": "eText multiple choice",
+        "placeholder": "Title for this question",
+        "hidden": false
+    },
+    "activityLabel": {
+        "type": "rich-text",
+        "label": "Label No."
+    },
+    "activityTitle": {
+        "type": "rich-text",
+        "label": "Activity Title"
+    },
+    "instructions": {
+        "type": "rich-text",
+        "label": "Instructions"
+    },
+    "label": {
+        "type": "rich-text",
+        "label": "Question Label",
+        "default": "",
+        "placeholder": "Type your question here"
+    },
+    "questionImage": {
+        "type": "image",
+        "label": "Question Image",
+        "description": "The image for the question"
+    },
+    "buttonPosition": {
+        "type": "enum",
+        "displayType": "segmented",
+        "label": "Button position",
+        "items": ["left", "center", "right"],
+        "displayLabels": ["Left", "Center", "Right"],
+        "default": "left"
+    },
+    "allowMultiSelect": {
+        "type": "boolean",
+        "default": false,
+        "label": "Allow multi-select"
+    },
+    "choices": {
+        "label": "Choices",
+        "type": "list",
+        "listType": {
+            "type": "group",
+            "properties": {
+                "choiceLabel": {
+                    "type": "rich-text",
+                    "label": "Label"
+                },
+                "choiceImage": {
+                    "type": "image",
+                    "label": "Choice Image",
+                    "description": "The image for the choice"
+                },
+                "correct": {
+                    "type": "boolean",
+                    "label": "Correct",
+                    "default": false
+                },
+                "feedback": {
+                    "type": "rich-text",
+                    "label": "Feedback",
+                    "placeholder": "Add additional feedback here"
+                },
+                "feedbackImage": {
+                    "type": "image",
+                    "label": "Feedback Image",
+                    "description": "The image for the feedback"
+                }
+            }
+        },
+        "default": [
+            {
+                "choiceLabel": "<p dir=\"auto\">Text of choice 1</p>",
+                "choiceImage": "",
+                "correct": true,
+                "feedback": "",
+                "feedbackImage": ""
+            },
+            {
+                "choiceLabel": "<p dir=\"auto\">Text of choice 2</p>",
+                "choiceImage": "",
+                "correct": false,
+                "feedback": "",
+                "feedbackImage": ""
+            },
+            {
+                "choiceLabel": "<p dir=\"auto\">Text of choice 3</p>",
+                "choiceImage": "",
+                "correct": false,
+                "feedback": "",
+                "feedbackImage": ""
+            }
+        ]
+    },
+    "selection": {
+        "type": "list",
+        "label": "Selected choices",
+        "listType": "text",
+        "hidden": true,
+        "learnerEditable": true
+    },
+    "isCorrect": {
+        "type": "boolean",
+        "label": "Correct",
+        "description": "Correct choice(s) has been selected",
+        "readOnly": true,
+        "default": false,
+        "hidden": true,
+        "learnerEditable": true
+    },
+    "style": {
+        "type": "group",
+        "flat": true,
+        "hidden": true,
+        "properties": {
+            "textColor": {
+                "type": "color",
+                "label": "Text Color"
+            },
+            "customCss": {
+                "type": "text",
+                "label": "CSS",
+                "default": ""
+            },
+            "cssUrl": {
+                "type": "text",
+                "label": "CSS URL",
+                "default": ""
+            }
+        }
+    }
+}

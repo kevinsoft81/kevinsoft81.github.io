@@ -1,0 +1,142 @@
+{
+  "title": {
+    "type": "text",
+    "default": "Inline Dropdown Input"
+  },
+  "enabled": {
+    "type": "boolean",
+    "default": true,
+    "hidden": false,
+    "learnerEditable": true
+  },
+  "placeholder": {
+    "type": "text",
+    "label": "Placeholder",
+    "default": "Select an option"
+  },
+  "choices": {
+    "label": "Choices",
+    "type": "list",
+    "learnerEditable": true,
+    "listType": {
+      "type": "group",
+      "properties": {
+        "choiceLabel": {
+          "type": "text",
+          "label": "Label",
+          "hidden": true,
+          "default": ""
+        },
+        "richChoiceLabel": {
+          "type": "rich-text",
+          "label": "Label",
+          "default": "Option",
+          "learnerEditable": true
+        },
+        "correct": {
+          "type": "boolean",
+          "label": "Correct",
+          "default": false
+        }
+      }
+    },
+    "default": [
+      {
+        "choiceLabel": "Option 1",
+        "correct": true,
+        "value": "item 1"
+      },
+      {
+        "choiceLabel": "Option 2",
+        "correct": false,
+        "value": "item 2"
+      },
+      {
+        "choiceLabel": "Option 3",
+        "correct": false,
+        "value": "item 3"
+      }
+    ]
+  },
+  "selection": {
+    "type": "text",
+    "label": "DONT USE-selectedId",
+    "hidden": true,
+    "learnerEditable": true,
+    "default": "item 1"
+  },
+  "selectionLabel": {
+    "type": "text",
+    "label": "Selected label",
+    "hidden": true,
+    "learnerEditable": true
+  },
+  "selectionIndex": {
+    "type": "number",
+    "hidden": true,
+    "learnerEditable": true,
+    "label": "Selected index",
+    "default": 0,
+    "description": "Index from 1 and up, zero means editor mode or no selection"
+  },
+  "learnerModified": {
+    "type": "boolean",
+    "label": "Attempted",
+    "default": false,
+    "hidden": true,
+    "learnerEditable": true
+  },
+  "style": {
+    "type": "group",
+    "flat": true,
+    "properties": {
+      "customClass": {
+        "type": "text",
+        "label": "Custom CSS class",
+        "default": ""
+      },
+      "customCss": {
+        "type": "text",
+        "label": "CSS",
+        "default": ""
+      },
+      "cssUrl": {
+        "type": "text",
+        "label": "CSS URL",
+        "default": ""
+      }
+    }
+  },
+  "isCorrect": {
+    "type": "boolean",
+    "label": "Correct",
+    "description": "Correct choice(s) has been selected",
+    "readOnly": true,
+    "default": false,
+    "hidden": true,
+    "learnerEditable": true
+  },
+  "showCorrect": {
+    "type": "boolean",
+    "label": "Show correct",
+    "description": "Show the correct answer to the learner",
+    "default": false,
+    "hidden": true,
+    "learnerEditable": true
+  },
+  "showHints": {
+    "label": "Show Hints",
+    "type": "boolean",
+    "description": "Displays a highlight around items with color based whether the correct answer has been selected. Re-displays on a check event",
+    "default": false,
+    "hidden": true,
+    "learnerEditable": true
+  },
+  "__parentData": {
+    "type": "json",
+    "hidden": true,
+    "learnerEditable": true,
+    "readOnly": true,
+    "description": "This property is used by the container to store data specific for this plugin. At the moment the data that will be store is the plugin dimensions."
+  }
+}

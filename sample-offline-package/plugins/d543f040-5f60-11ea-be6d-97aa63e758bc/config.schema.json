@@ -1,0 +1,290 @@
+{
+  "title": {
+    "type": "text",
+    "default": "Untitled Lesson"
+  },
+  "description": {
+    "type": "rich-text"
+  },
+  "pathway": {
+    "type": "pathway",
+    "hidden": true,
+    "allowedCourseware": ["screen"],
+    "preload": "first"
+  },
+  "header": {
+    "type": "group",
+    "properties": {
+      "showHeader": {
+        "type": "boolean",
+        "label": "Show header",
+        "default": false
+      },
+      "hideOnScroll": {
+        "type": "boolean",
+        "label": "Hide on scroll",
+        "default": false
+      },
+      "showScore": {
+        "type": "boolean",
+        "label": "Show score",
+        "default": false
+      },
+      "showTitle": {
+        "type": "enum",
+        "displayType": "segmented",
+        "label": "Lesson title",
+        "description": "Show the lesson title",
+        "items": [
+          "show",
+          "hide"
+        ],
+        "displayLabels": [
+          "Show",
+          "Hide"
+        ],
+        "default": "show"
+      },
+      "height": {
+        "type": "number",
+        "default": 60
+      },
+      "padding": {
+        "type": "text",
+        "default": "6px 20px 6px 10px"
+      },
+      "shadow": {
+        "type": "boolean",
+        "default": true
+      },
+      "titleSize": {
+        "type": "number",
+        "label": "Title size",
+        "default": 16,
+        "units": "px"
+      },
+      "logo": {
+        "type": "image",
+        "label": "Logo"
+      },
+      "headerPlugin": {
+        "type": "courseware-item",
+        "label": "Header plugin",
+        "allowedCourseware": [
+          "component"
+        ],
+        "description": "A Plugin that is shown in the middle of the header."
+      },
+      "historyNavigation": {
+        "type": "group",
+        "flat": true,
+        "label": "History Navigation",
+        "properties": {
+          "title": {
+            "type": "rich-text",
+            "default": "HISTORY"
+          },
+          "showHistoryNav": {
+            "type": "enum",
+            "displayType": "segmented",
+            "label": "History panel",
+            "description": "Show the history navigation panel if the header is enabled",
+            "items": [
+              "show",
+              "hide"
+            ],
+            "displayLabels": [
+              "Show",
+              "Hide"
+            ],
+            "default": "hide"
+          },
+          "allowRestart": {
+            "type": "boolean",
+            "label": "Allow restart",
+            "default": true
+          },
+          "restartPopupMessage": {
+            "type": "rich-text",
+            "label": "Restart popup",
+            "description": "If left empty, there's no 2 steps validation",
+            "default": "You will lose all your current lesson progress and start from the beginning. Are you sure you want to restart?"
+          },
+          "segments": {
+            "type": "list",
+            "label": "Lesson sections",
+            "listType": {
+              "type": "group",
+              "properties": {
+                "label": {
+                  "type": "rich-text",
+                  "default": "Section",
+                  "description": "Lesson sections"
+                },
+                "numberOfScreens": {
+                  "type": "number",
+                  "label": "Number of screens",
+                  "units": "screens",
+                  "default": 4,
+                  "description": "The number of screens within the section"
+                }
+              }
+            },
+            "default": []
+          }
+        }
+      }
+    }
+  },
+  "transitions": {
+    "label": "Screen transitions",
+    "properties": {
+      "enter": {
+        "flat": true,
+        "properties": {
+          "animation": {
+            "default": "none",
+            "displayLabels": [
+              "None (default)",
+              "Fade",
+              "Slide down",
+              "Slide left",
+              "Slide right",
+              "Slide up",
+              "Custom keyframes"
+            ],
+            "items": [
+              "NONE",
+              "FADE",
+              "SLIDE_DOWN",
+              "SLIDE_LEFT",
+              "SLIDE_RIGHT",
+              "SLIDE_UP",
+              "CUSTOM"
+            ],
+            "placeholder": "Select an animation type",
+            "type": "enum"
+          },
+          "duration": {
+            "default": 500,
+            "type": "number",
+            "units": "ms"
+          },
+          "easing": {
+            "default": "linear",
+            "displayLabels": ["Ease in", "Ease out", "Linear"],
+            "displayType": "segmented",
+            "items": ["ease-in", "ease-out", "linear"],
+            "placeholder": "Select a timing function",
+            "type": "enum"
+          },
+          "customKeyframes": {
+            "default": "[{}, {}]",
+            "description": "Custom keyframes must be provided in valid JSON format.",
+            "label": "Custom keyframes",
+            "type": "json"
+          }
+        },
+        "type": "group"
+      },
+      "exit": {
+        "flat": true,
+        "properties": {
+          "animation": {
+            "default": "none",
+            "displayLabels": [
+              "None (default)",
+              "Fade",
+              "Slide down",
+              "Slide left",
+              "Slide right",
+              "Slide up",
+              "Custom keyframes"
+            ],
+            "items": [
+              "NONE",
+              "FADE",
+              "SLIDE_DOWN",
+              "SLIDE_LEFT",
+              "SLIDE_RIGHT",
+              "SLIDE_UP",
+              "CUSTOM"
+            ],
+            "placeholder": "Select an animation type",
+            "type": "enum"
+          },
+          "duration": {
+            "default": 500,
+            "type": "number",
+            "units": "ms"
+          },
+          "easing": {
+            "default": "linear",
+            "displayLabels": ["Ease in", "Ease out", "Linear"],
+            "displayType": "segmented",
+            "items": ["ease-in", "ease-out", "linear"],
+            "placeholder": "Select a timing function",
+            "type": "enum"
+          },
+          "customKeyframes": {
+            "default": "[{}, {}]",
+            "description": "Custom keyframes must be provided in valid JSON format.",
+            "label": "Custom keyframes",
+            "type": "json"
+          }
+        },
+        "type": "group"
+      }
+    },
+    "type": "group"
+  },
+  "loader": {
+    "label": "Loader",
+    "type": "group",
+    "properties": {
+      "loaderOption": {
+        "type": "enum",
+        "label": "Loader",
+        "default": "none",
+        "displayLabels": [
+          "None",
+          "Default",
+          "iLabs"
+        ],
+        "items": [
+          "none",
+          "default",
+          "ilabs"
+        ],
+        "placeholder": "Select a loader"
+      },
+      "altText": {
+        "type": "text",
+        "label": "Alt text",
+        "default": ""
+      },
+      "timeOut": {
+        "type": "number",
+        "label": "Minimum time",
+        "default": 3,
+        "units": "s",
+        "description": "The minimum amount of time the loader will show regardless of whether the page has loaded or not"
+      },
+      "loaderBackground": {
+        "type": "color",
+        "label": "Page background",
+        "default": "rgba(9, 17, 26, 1)",
+        "description": "The loader page background color"
+      }
+    }
+  },
+  "apps": {
+    "type": "list",
+    "label": "Apps",
+    "description": "The header must be enabled to view the apps",
+    "listType": {
+      "type": "courseware-item",
+      "allowedCourseware": ["component"]
+    }
+  }
+}

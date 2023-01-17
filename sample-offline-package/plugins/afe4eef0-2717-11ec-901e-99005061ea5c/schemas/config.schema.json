@@ -1,0 +1,84 @@
+{
+  "title": {
+    "type": "text",
+    "default": "Code Block",
+    "label": "Plugin ID"
+  },
+  "activityLabel": {
+    "type": "rich-text",
+    "label": "Label No."
+  },
+  "activityTitle": {
+    "type": "rich-text",
+    "label": "Activity Title"
+  },
+  "instructions": {
+    "type": "rich-text",
+    "label": "Instructions"
+  },
+  "captions": {
+    "type": "rich-text",
+    "label": "Captions"
+  },
+  "language": {
+    "type": "enum",
+    "default": "no language",
+    "label": "Select Language",
+    "items": [
+      "no language",
+      "aspnet",
+      "c",
+      "csharp",
+      "cpp",
+      "css",
+      "html",
+      "java",
+      "javascript",
+      "matlab",
+      "python",
+      "sql"
+    ],
+    "displayLabels": [
+      "No Language",
+      "ASP.NET",
+      "C",
+      "C#",
+      "C++",
+      "CSS",
+      "HTML",
+      "Java",
+      "JavaScript",
+      "MatLab",
+      "Python",
+      "SQL"
+    ]
+  },
+  "lineNumber": {
+    "type": "number",
+    "minimum": 1,
+    "default": 1,
+    "label": "Starting Line Number"
+  },
+  "showLineNumber": {
+    "type": "enum",
+    "displayType": "segmented",
+    "default": "off",
+    "label": "Line Number",
+    "items": ["on", "off"]
+  },
+  "coloring": {
+    "type": "enum",
+    "displayType": "segmented",
+    "default": "off",
+    "label": "Syntax Coloring",
+    "items": ["on", "off"]
+  },
+  "appearance": {
+    "type": "enum",
+    "label": "Appearance",
+    "displayType": "segmented",
+    "items": ["light", "dark"],
+    "displayLabels": ["Light", "Dark"],
+    "default": "light"
+  }
+}

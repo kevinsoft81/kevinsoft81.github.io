@@ -1,0 +1,18 @@
+manifest = {
+  "id": "0942bb10-ec92-11ea-83ad-b140526ebf41",
+  "name": "Code Block",
+  "description": "Code Block Plugin Component ",
+  "version": "2.2.4",
+  "author": "Harish Madathil",
+  "email": "harish.madathil@pearson.com",
+  "type": "component",
+  "configurationSchema": "schemas/config.schema.json",
+  "views": {
+    "LEARNER": {
+      "contentType": "text/html",
+      "publicDir": "dist",
+      "entryPoint": "index.html"
+    }
+  },
+  "searchable": []
+}

@@ -1,0 +1,34 @@
+{
+    "title": {
+        "type": "text",
+        "label": "Title",
+        "default": "Simple Unit"
+    },
+    "description": {
+        "type": "rich-text",
+        "label": "Description",
+        "default": ""
+    },
+    "lessons": {
+        "type": "pathway",
+        "label": "Lessons",
+        "allowedCourseware": ["lesson"],
+        "hidden": true,
+        "preload": "first"
+    },
+    "preTitle": {
+        "type": "text",
+        "label": "Pre-title",
+        "default": ""
+    },
+    "bannerBackgroundColor": {
+        "type": "color",
+        "label": "Banner Color",
+        "default": "rgba(255, 255, 255, 1)"
+    },
+    "bannerBackgroundImage": {
+        "type": "text",
+        "label": "Banner Image",
+        "default": ""
+    }
+}

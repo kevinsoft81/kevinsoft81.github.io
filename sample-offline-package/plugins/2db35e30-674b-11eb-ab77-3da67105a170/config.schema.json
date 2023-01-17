@@ -1,0 +1,80 @@
+{
+  "title": {
+    "type": "text",
+    "default": "Inline text input"
+  },
+  "placeholder": {
+    "type": "text",
+    "label": "Placeholder",
+    "default": ""
+  },
+  "enabled": {
+    "type": "boolean",
+    "default": true,
+    "hidden": true,
+    "learnerEditable": true
+  },
+  "value": {
+    "type": "text",
+    "label": "Learner input value",
+    "learnerEditable": true,
+    "hidden": false
+  },
+  "showCorrectValue": {
+    "type": "text",
+    "label": "Show correct value",
+    "description": "Not entirely the correct value, but the value to be shown when showCorrect is true",
+    "learnerEditable": false,
+    "hidden": true
+  },
+  "valueCharacterCount": {
+    "type": "number",
+    "label": "Learner char count",
+    "default": 0,
+    "hidden": true,
+    "learnerEditable": true
+  },
+  "learnerModified": {
+    "type": "boolean",
+    "default": false,
+    "label": "Modified by learner",
+    "hidden": true,
+    "learnerEditable": true
+  },
+  "style": {
+    "type": "group",
+    "flat": true,
+    "properties": {
+      "customClass": {
+        "type": "text",
+        "label": "Custom CSS class",
+        "default": ""
+      },
+      "customCss": {
+        "type": "text",
+        "label": "CSS",
+        "default": ""
+      },
+      "cssUrl": {
+        "type": "text",
+        "label": "CSS URL",
+        "default": ""
+      }
+    }
+  },
+  "showCorrect": {
+    "type": "boolean",
+    "label": "Show correct",
+    "description": "Show the correct answer to the learner",
+    "default": false,
+    "hidden": true,
+    "learnerEditable": true
+  },
+  "__parentData": {
+    "type": "json",
+    "hidden": true,
+    "learnerEditable": true,
+    "readOnly": true,
+    "description": "This property is used by the container to store data specific for this plugin. At the moment the data that will be store is the plugin dimensions."
+  }
+}

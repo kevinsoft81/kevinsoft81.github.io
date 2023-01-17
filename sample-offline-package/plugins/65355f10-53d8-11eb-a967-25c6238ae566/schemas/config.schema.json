@@ -1,0 +1,50 @@
+{
+  "label": {
+    "type": "rich-text",
+    "label": "Label No.",
+    "description": "Add label for the video",
+    "placeholder": "Video 1.2"
+  },
+  "displaytitle": {
+    "type": "rich-text",
+    "label": "Activity title",
+    "description": "Add a display title for the audio/video",
+    "placeholder": "About Animals"
+  },
+  "instText": {
+    "type": "rich-text",
+    "label": "Instructions",
+    "description": "Producers can add an instructional text for the audio/video to display more information, ie: The learning objective for this video is to recognize the symbol. ",
+    "placeholder": "Learning objective 1.1"
+  },
+  "source": {
+    "label": "Source",
+    "type": "text",
+    "description": "please add links in the format starting with: https://mediaplayer.pearsoncmg.com/. (.html pages are not accepted)",
+    "pattern": "^([\\s]*(?:https?:)?//)?((?:www|m)\\/.)?((?:mediaplayer\\.pearsoncmg\\.com))(/assets/)"
+  },
+  "caption": {
+    "label": "Caption",
+    "type": "rich-text",
+    "description": "Add descriptions for the audio/video",
+    "placeholder": "Video/audio description"
+  },
+  "credit": {
+    "label": "Credit",
+    "type": "rich-text",
+    "description": "Add copyright info",
+    "placeholder": "Video/audio copyright info"
+  },
+  "textAlignment": {
+    "label": "Alignment",
+    "type": "enum",
+    "displayType": "segmented",
+    "items": ["left", "center", "right"],
+    "default": "left",
+    "displayIcons": [
+      "format_align_left",
+      "format_align_center",
+      "format_align_right"
+    ]
+  }
+}

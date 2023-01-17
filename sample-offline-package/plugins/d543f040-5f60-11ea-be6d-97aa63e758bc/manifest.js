@@ -1,0 +1,22 @@
+manifest = {
+  "name": "Standard Lesson",
+  "description": "Standard lesson",
+  "version": "2.10.17",
+  "type": "lesson",
+  "editorMode": "FULL_SCREEN",
+  "configurationSchema": "config.schema.json",
+  "views": {
+    "LEARNER": {
+      "contentType": "text/html",
+      "publicDir": "dist",
+      "entryPoint": "index.html"
+    }
+  },
+  "searchable": [
+    {
+      "contentType": "text",
+      "summary": "title",
+      "body": "description"
+    }
+  ]
+}
